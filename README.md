@@ -1,9 +1,16 @@
 # KMeans-Clustering
 
-A simple K-Means Clustering model implemented in python. The class KMeans is imported from sklearn.cluster library. In order to find the optimal number of cluster for the dataset, the model was provided with different numbers of cluster ranging from 1 to 10. The 'k-means++' method to passed to the init argument to avoid the Random Initialization Trap. The max_iter and the n_init were passed with their default values.
+使用工具
+`from sklearn.cluster import KMeans`
 
-The WCSS ( or Within Cluster Sum of Squares ) was caluated and plotted to find the optimal number of clusters. The "Elbow Method" was used to find the optimal number of clusters. 
+此次分析項目
+`X = dataset.iloc[:,[3,4]].values`
+也就是針對csv檔中的年收入(Annual Income)和消費分數(Spending Score)
 
-Once the optimal number of clusters were found the model was reinitalised with the n_cluster arguments begin passed with the optimal number of clusters found using the "Elbow Method".
+整體流程
+1. 先用elbow method找出適當的分群數
+說明:設定一個1-11群的迴圈，找出其WCSS(組內平方和)，在從圖片中找到肘點
 
-Finally, the clusters were visualised using scatter plot. 
+2. 接著把分群數n_clusters = 5後，繪出圖形
+
+thank you github:mahesh147
